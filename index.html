@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sankey Diagram</title>
     <!-- Highcharts Library -->
-    <script src="https://code.highcharts.com/11/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/sankey.js"></script>
     <!-- Accessibility module (optional) -->
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
@@ -20,7 +20,7 @@
             },
             subtitle: {
                 text:
-              'Source: Planet Tracker analysis using FactSet data'
+              'Source: Planet Tracker Analysis using FactSet data'
             },
             accessibility: {
                 point: {
@@ -32,8 +32,8 @@
                 headerFormat: null,
                 pointFormat:
               '{point.fromNode.name} \u2192 {point.toNode.name}: {point.weight:.2f} ' +
-              'quads',
-                nodeFormat: '{point.name}: {point.sum:} USD mn'
+              'USD mn',
+                nodeFormat: '{point.name}: {point.sum:.2f} USD mn'
             },
             series: [{
                 keys: ['from', 'to', 'weight'],
@@ -41,66 +41,52 @@
                 nodes: [
                     {
                         id: 'OECD',
-                        color: '#ffa500',
-                        column: 1
+                        color: '#ffa500'
                     },
                     {
                         id: 'ROW',
-                        color: '#74ffe7',
-                        column: 1
+                        color: '#74ffe7'
                     },
                     {
                         id: 'Ratified',
-                        color: '#8cff74',
-                        column: 2,
-                        offset: 50
+                        color: '#8cff74'
                     },
                     {
                         id: 'Non-Signatory',
-                        color: '#ff8da1',
-                        column: 2,
-                        offset: 50
+                        color: '#ff8da1'
                     },
                     {
                         id: 'Pharmaceuticals & Food Supplements',
-                        color: '#f4c0ff',
-                        column: 3,
-                        offset: -30
+                        color: '#f4c0ff'
                     },
                     {
                         id: 'Laboratory Equipment',
-                        color: '#e6e6e6',
-                        column: 3,
-                        offset: -30
+                        color: '#e6e6e6'
                     },
                     {
                         id: 'Cosmetics',
-                        color: '#F9E79F',
-                        column: 3,
-                        offset: -30
+                        color: '#F9E79F'
                     },
                     {
                         id: 'Animal and Planet Breeding Biotechnology, Life Sciences',
-                        color: '#009c00',
-                        column: 3,
-                        offset: -30
+                        color: '#009c00'
                     }
                 ],
         
                 data: [
-                    ['OECD', 'Ratified', 1352],
-                    ['OECD', 'Non-Signatory', 3152],
-                    ['ROW', 'Ratified', 605],
-        
-                    ['Ratified', 'Pharmaceuticals & Food Supplements', 1210],
-                    ['Ratified', 'Laboratory Equipment', 579],
-                    ['Ratified', 'Cosmetics', 141],
-                    ['Ratified', 'Animal and Planet Breeding Biotechnology, Life Sciences', 27],
-        
-                    ['Non-Signatory', 'Pharmaceuticals & Food Supplements', 2608],
-                    ['Non-Signatory', 'Laboratory Equipment', 354],
-                    ['Non-Signatory', 'Cosmetics', 190],
-                    ['Non-Signatory', 'Animal and Planet Breeding Biotechnology, Life Sciences', -1]
+                    ['OECD', 'Ratified', 1358],
+                    ['OECD', 'Non-Signatory', 1819],
+                    ['ROW', 'Ratified', 828],
+                    // connecting Ratified to sectors
+                    ['Ratified', 'Pharmaceuticals & Food Supplements', 1166],
+                    ['Ratified', 'Laboratory Equipment', 748],
+                    ['Ratified', 'Cosmetics', 231],
+                    ['Ratified', 'Animal and Planet Breeding Biotechnology, Life Sciences', 41],
+                    // connecting non-signatory to sectors
+                    ['Non-Signatory', 'Pharmaceuticals & Food Supplements', 1202],
+                    ['Non-Signatory', 'Laboratory Equipment', 339],
+                    ['Non-Signatory', 'Cosmetics', 217],
+                    ['Non-Signatory', 'Animal and Planet Breeding Biotechnology, Life Sciences', 62]
         
                 ],
                 type: 'sankey',
