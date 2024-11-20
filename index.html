@@ -1,94 +1,112 @@
-Highcharts.chart('container', {
-
-    title: {
-        text: 'Potential Profit Contributions to the Cali Fund (USD mn)'
-    },
-    subtitle: {
-        text:
-      'Source: Planet Tracker analysis using FactSet data'
-    },
-    accessibility: {
-        point: {
-            valueDescriptionFormat: '{index}. {point.from} to {point.to}, ' +
-                '{point.weight}.'
-        }
-    },
-    tooltip: {
-        headerFormat: null,
-        pointFormat:
-      '{point.fromNode.name} \u2192 {point.toNode.name}: {point.weight:.2f} ' +
-      'quads',
-        nodeFormat: '{point.name}: {point.sum:.2f} quads'
-    },
-    series: [{
-        keys: ['from', 'to', 'weight'],
-
-        nodes: [
-            {
-                id: 'OECD',
-                color: '#ffa500'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sankey Diagram</title>
+    <!-- Highcharts Library -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/sankey.js"></script>
+    <!-- Accessibility module (optional) -->
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+</head>
+<body>
+    <div id="container" style="width: 100%; height: 600px;"></div>
+    <script>
+        Highcharts.chart('container', {
+        
+            title: {
+                text: 'Potential Profit Contributions to the Cali Fund (USD mn)'
             },
-            {
-                id: 'ROW',
-                color: '#74ffe7'
+            subtitle: {
+                text:
+              'Source: Planet Tracker analysis using FactSet data'
             },
-            {
-                id: 'Ratified',
-                color: '#8cff74',
-                column: 2,
-                offset: 50
+            accessibility: {
+                point: {
+                    valueDescriptionFormat: '{index}. {point.from} to {point.to}, ' +
+                        '{point.weight}.'
+                }
             },
-            {
-                id: 'Non-Signatory',
-                color: '#ff8da1',
-                column: 2,
-                offset: 50
+            tooltip: {
+                headerFormat: null,
+                pointFormat:
+              '{point.fromNode.name} \u2192 {point.toNode.name}: {point.weight:.2f} ' +
+              'quads',
+                nodeFormat: '{point.name}: {point.sum:.2f} quads'
             },
-            {
-                id: 'Pharmaceuticals & Food Supplements',
-                color: '#f4c0ff',
-                column: 3,
-                offset: -30
-            },
-            {
-                id: 'Laboratory Equipment',
-                color: '#e6e6e6',
-                column: 3,
-                offset: -30
-            },
-            {
-                id: 'Cosmetics',
-                color: '#F9E79F',
-                column: 3,
-                offset: -30
-            },
-            {
-                id: 'Animal and Planet Breeding Biotechnology, Life Sciences',
-                color: '#009c00',
-                column: 3,
-                offset: -30
-            }
-        ],
-
-        data: [
-            ['OECD', 'Ratified', 1352],
-            ['OECD', 'Non-Signatory', 3152],
-            ['ROW', 'Ratified', 605],
-            ['ROW', 'Non-Signatory', 0],
-
-            ['Ratified', 'Pharmaceuticals & Food Supplements', 1210],
-            ['Ratified', 'Laboratory Equipment', 579],
-            ['Ratified', 'Cosmetics', 141],
-            ['Ratified', 'Animal and Planet Breeding Biotechnology, Life Sciences', 27],
-
-            ['Non-Signatory', 'Pharmaceuticals & Food Supplements', 2608],
-            ['Non-Signatory', 'Laboratory Equipment', 354],
-            ['Non-Signatory', 'Cosmetics', 190],
-            ['Non-Signatory', 'Animal and Planet Breeding Biotechnology, Life Sciences', -1],
-
-        ],
-        type: 'sankey',
-        name: 'Sankey demo series'
-    }]
-
-});
+            series: [{
+                keys: ['from', 'to', 'weight'],
+        
+                nodes: [
+                    {
+                        id: 'OECD',
+                        color: '#ffa500'
+                    },
+                    {
+                        id: 'ROW',
+                        color: '#74ffe7'
+                    },
+                    {
+                        id: 'Ratified',
+                        color: '#8cff74',
+                        column: 2,
+                        offset: 50
+                    },
+                    {
+                        id: 'Non-Signatory',
+                        color: '#ff8da1',
+                        column: 2,
+                        offset: 50
+                    },
+                    {
+                        id: 'Pharmaceuticals & Food Supplements',
+                        color: '#f4c0ff',
+                        column: 3,
+                        offset: -30
+                    },
+                    {
+                        id: 'Laboratory Equipment',
+                        color: '#e6e6e6',
+                        column: 3,
+                        offset: -30
+                    },
+                    {
+                        id: 'Cosmetics',
+                        color: '#F9E79F',
+                        column: 3,
+                        offset: -30
+                    },
+                    {
+                        id: 'Animal and Planet Breeding Biotechnology, Life Sciences',
+                        color: '#009c00',
+                        column: 3,
+                        offset: -30
+                    }
+                ],
+        
+                data: [
+                    ['OECD', 'Ratified', 1352],
+                    ['OECD', 'Non-Signatory', 3152],
+                    ['ROW', 'Ratified', 605],
+                    ['ROW', 'Non-Signatory', 0],
+        
+                    ['Ratified', 'Pharmaceuticals & Food Supplements', 1210],
+                    ['Ratified', 'Laboratory Equipment', 579],
+                    ['Ratified', 'Cosmetics', 141],
+                    ['Ratified', 'Animal and Planet Breeding Biotechnology, Life Sciences', 27],
+        
+                    ['Non-Signatory', 'Pharmaceuticals & Food Supplements', 2608],
+                    ['Non-Signatory', 'Laboratory Equipment', 354],
+                    ['Non-Signatory', 'Cosmetics', 190],
+                    ['Non-Signatory', 'Animal and Planet Breeding Biotechnology, Life Sciences', -1],
+        
+                ],
+                type: 'sankey',
+                name: 'Sankey demo series'
+            }]
+        
+        });
+    </script>
+</body>
+</html>
