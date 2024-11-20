@@ -16,7 +16,7 @@
         Highcharts.chart('container', {
         
             title: {
-                text: 'Potential Revenue Contributions to the Cali Fund (USD mn)'
+                text: 'Potential Profit Contributions to the Cali Fund (USD mn)'
             },
             subtitle: {
                 text:
@@ -48,14 +48,6 @@
                         color: '#f5cfa3'
                     },
                     {
-                        id: 'Ratified',
-                        color: '#70c0b6'
-                    },
-                    {
-                        id: 'Non-Signatory',
-                        color: '#f18b71'
-                    },
-                    {
                         id: 'Pharmaceuticals & Food Supplements',
                         color: '#445f71' // same colour for all sectors
                     },
@@ -74,19 +66,14 @@
                 ],
         
                 data: [
-                    ['OECD', 'Ratified', 1358],
-                    ['OECD', 'Non-Signatory', 1819],
-                    ['ROW', 'Ratified', 828],
-                    // connecting Ratified to sectors
-                    ['Ratified', 'Pharmaceuticals & Food Supplements', 1166],
-                    ['Ratified', 'Laboratory Equipment', 748],
-                    ['Ratified', 'Cosmetics', 231],
-                    ['Ratified', 'Animal and Planet Breeding Biotechnology, Life Sciences', 41],
-                    // connecting non-signatory to sectors
-                    ['Non-Signatory', 'Pharmaceuticals & Food Supplements', 1202],
-                    ['Non-Signatory', 'Laboratory Equipment', 339],
-                    ['Non-Signatory', 'Cosmetics', 217],
-                    ['Non-Signatory', 'Animal and Planet Breeding Biotechnology, Life Sciences', 62]
+                    ['OECD', 'Pharmaceuticals & Food Supplements', 836],
+                    ['OECD', 'Laboratory Equipment', 336],
+                    ['OECD', 'Cosmetics', 171],
+                    ['OECD', 'Animal and Planet Breeding Biotechnology, Life Sciences', 9],
+                    
+                    ['ROW', 'Pharmaceuticals & Food Supplements', 373],
+                    ['ROW', 'Laboratory Equipment', 243],
+                    ['ROW', 'Animal and Planet Breeding Biotechnology, Life Sciences', 18]
         
                 ],
                 type: 'sankey',
