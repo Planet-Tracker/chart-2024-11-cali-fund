@@ -16,7 +16,7 @@
         Highcharts.chart('container', {
         
             title: {
-                text: 'Potential Profit Contributions to the Cali Fund (USD mn)'
+                text: 'Potential Revenue Contributions to the Cali Fund (USD mn)'
             },
             subtitle: {
                 text:
@@ -31,7 +31,7 @@
             tooltip: {
                 headerFormat: null,
                 pointFormat:
-              '{point.fromNode.name} \u2192 {point.toNode.name}: {point.weight:.2f} ' +
+              '{point.fromNode.name} \u2192 {point.toNode.name}: {point.weight:,} ' +
               'USD mn',
                 nodeFormat: '{point.name}: {point.sum:.2f} USD mn'
             },
