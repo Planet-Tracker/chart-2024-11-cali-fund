@@ -31,9 +31,9 @@
             tooltip: {
                 headerFormat: null,
                 pointFormat:
-              '{point.fromNode.name} \u2192 {point.toNode.name}: {point.weight:,} ' +
+              '{point.fromNode.name} \u2192 {point.toNode.name}: {point.weight:,.1f} ' +
               'USD mn',
-                nodeFormat: '{point.name}: {point.sum:.2f} USD mn'
+                nodeFormat: '{point.name}: {point.sum:.1f} USD mn'
             },
             series: [{
                 keys: ['from', 'to', 'weight'],
